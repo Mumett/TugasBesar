@@ -41,6 +41,10 @@ public class LapanganControl {
     public void updateDataLapangan(Lapangan l, int id) {
         lDao.updateLapangan(l,id);
     }
+    
+    public void updateStatusLapangan(Lapangan l, int id){
+        lDao.updateStatusLapangan(l, id);
+    }
 
     public void deleteDataLapangan(int id) {
         lDao.deleteLapangan(id);

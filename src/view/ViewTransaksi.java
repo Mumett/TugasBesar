@@ -555,7 +555,8 @@ public class ViewTransaksi extends javax.swing.JFrame {
             outputStatusBayar.setText("Lunas");
 //            peminjamanLap.getLapangan().getStatusLapangan().replace("Available", "Booked");
 //            lapangan.getStatusLapangan().replace("Available", "Booked");
-              lapangan.setStatusLapangan("Booked");
+             peminjamanLap.getLapangan().setStatusLapangan("Booked");
+            lControl.updateDataLapangan(peminjamanLap.getLapangan(), peminjamanLap.getLapangan().getId());
         }
     }//GEN-LAST:event_bayarBtnActionPerformed
 

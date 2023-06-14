@@ -141,7 +141,7 @@ public class LapanganDAO {
         String sql = "Update lapangan SET nama = '" + l.getNama1() + "',luas ='"
                 + l.getLuas() + "', jenis = '" + l.getJenis() + "',fasilitas ='"
                 + l.getFasilitas() + "',statusLapangan ='" + l.getStatusLapangan()
-                + " WHERE id = '" + l.getId() + "'";
+                + "' WHERE id = '" + l.getId() + "'";
         System.out.println("Editing Lapangan...");
 
         try {
@@ -154,6 +154,29 @@ public class LapanganDAO {
             System.out.println(e);
         }
         dbCon.closeConnection();
+        
+    }
+    
+    public void updateStatusLapangan(Lapangan l, int id){
+        con = dbCon.makeConnection();
+        
+//        String sql = "Update lapangan SET statusLapangan = 'Booked' where id = '" +l.getId() + "'";
+        String sql = "Update lapangan SET statusLapangan = '" + l.getStatusLapangan()
+                + "' where id = " +l.getId();
+        System.out.println("Editing status Lapangan...");
+
+        try {
+            Statement statement = con.createStatement();
+            int result = statement.executeUpdate(sql);
+            System.out.println("Edited " + result + " status Lapangan" + id);
+            statement.close();
+        } catch (Exception e) {
+            System.out.println("Error editing lapangan...");
+            System.out.println(e);
+        }
+        dbCon.closeConnection();
+        
+        
         
     }
 
